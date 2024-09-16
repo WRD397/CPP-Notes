@@ -30,10 +30,26 @@ void foo() {
 }
 
 
-int main() {
-	foo();
-	return 0;
+
+// iteration
+
+void fact() {
+	int prod = 1, n=0;
+
+	std::cout << "provide the input : ";
+	std::cin >> n;
+	for (int i=1; i<=n; i++) {
+		prod *= i;
+	}
+
+	std::cout << prod;
+
 }
 
 
-//
+
+
+int main() {
+	fact();
+	return 0;
+}
