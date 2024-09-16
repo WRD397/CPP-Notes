@@ -51,9 +51,10 @@ bool palindromeChecker() {
 }
 
 
-
+// much efficient as we are not saving the digits seperately - auxiliary space complexity - theta 1
 bool palindromeChecker2(){
 	int nRaw,n=0, newInt=0, counter=0, remainder=0;
+	int reverse = 0, last_digit=0;
 
 	std::cout << "Please provide the number : ";
 	std::cin >> nRaw;
@@ -61,8 +62,21 @@ bool palindromeChecker2(){
 	std::cout << "checking ***" << std::endl;
 
 	n=nRaw;
-	
 
+	while (n!=0) {
+
+		last_digit = n%10;
+		reverse = reverse*10 + last_digit;
+		n/=10;
+	}
+	
+	std::cout << "Reverse number is : " <<reverse <<std::endl<<std::endl;
+
+	if (reverse==nRaw) {
+		std::cout << "yes its a palindrome." <<std::endl;
+	}	
+
+	return true;
 
 }
 
@@ -70,6 +84,6 @@ bool palindromeChecker2(){
 
 int main() {
 
-	palindromeChecker();
+	palindromeChecker2();
 	return 0;
 }
