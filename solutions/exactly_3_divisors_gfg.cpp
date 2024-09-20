@@ -117,3 +117,112 @@ int main()
 	return 0;
 }
 // } Driver Code Ends
+
+
+
+
+
+//######### APPROACH 2
+
+//{ Driver Code Starts
+//Initial Template for C++
+
+#include <bits/stdc++.h>
+using namespace std;
+
+
+// } Driver Code Ends
+//User function Template for C++
+
+class Solution{
+    
+    public:
+    bool isPrime(int n) {
+        bool result = true;
+        if (n==1){
+            return false;
+        }
+        
+        else {
+            if (n < 4){
+                return true;
+            }
+            
+            else {
+            for(int i=2; i*i<=n; i++){
+                if (n%i==0){
+                    result=false;
+                    return result;
+                    }
+                }
+            }
+        }
+        
+        return result;
+    }
+    
+    public :
+    bool has3Divisor(int n) {
+        // return true if n has exactly 3 divisor else false.
+        // please pass only the non primes to reduce the no of iteration - as primes will ALWAYS HAVE 2 DIVISORS - 1 & itself.
+        // self hypothesis - if n can be divided by any integers betweeen 2 to sqrt(n) (excluding sqrt(n)) at least once - n has more than 3 divisors
+        // self hypothesis2 - if the number is square of a Prime - ONLY THEN it will have exact 3 divisors.
+        
+        if(isPrime(n)){
+            return false;
+        }
+        else{
+            for(int i=2; i*i < n; i++) {
+                if(n%i==0){
+                    return false;
+                }
+            }
+            return true;
+        }
+    }
+    
+    public:
+    int exactly3Divisors(int N)
+    {
+        //Your code here
+        int numCounter=0;
+        
+        if(N<4){
+            return 0;
+        }
+        else {
+            for(int i=4; N; i++){
+                if(has3Divisor(i)){
+                    numCounter++;
+                }
+            }
+        }
+        
+        return numCounter;
+        
+        
+    }  
+};
+
+//{ Driver Code Starts.
+
+
+int main()
+ {
+    int T;
+    
+    //taking testcases
+    cin>>T;
+    while(T--)
+    {
+        int N;
+        
+        //taking N
+        cin>>N;
+        Solution ob;
+        //calling function exactly3Divisors()
+        cout<<ob.exactly3Divisors(N)<<endl;
+    }
+    return 0;
+}
+// } Driver Code Ends
