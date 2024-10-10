@@ -27,96 +27,96 @@ Constraints :
 */
 
 
-#include <bits/stdc++.h>
-using namespace std;
+// #include <bits/stdc++.h>
+// using namespace std;
 
 
-// } Driver Code Ends
-//User function Template for C++
+// // } Driver Code Ends
+// //User function Template for C++
 
-class Solution{
+// class Solution{
     
-    public:
-    bool isPrime(int n) {
-        bool result = true;
-        if (n==1){
-            return false;
-        }
+//     public:
+//     bool isPrime(int n) {
+//         bool result = true;
+//         if (n==1){
+//             return false;
+//         }
         
-        else {
-            if (n < 4){
-                return true;
-            }
+//         else {
+//             if (n < 4){
+//                 return true;
+//             }
             
-            else {
-            for(int i=2; i*i<=n; i++){
-                if (n%i==0){
-                    result=false;
-                    return result;
-                    }
-                }
-            }
-        }
+//             else {
+//             for(int i=2; i*i<=n; i++){
+//                 if (n%i==0){
+//                     result=false;
+//                     return result;
+//                     }
+//                 }
+//             }
+//         }
         
-        return result;
-    }
+//         return result;
+//     }
     
-    public:
-    int exactly3Divisors(int N)
-    {
-        //Your code here
-        int numCounter=0;
-        if (N < 4) {
-            return 0;
-        }
-        else {
-            for(int i=1; i<=N; i++){
-                int divisorCounter=0;
-                if(!isPrime(i)){
-                    for(int j=2; j<i; j++){
-                        if(i%j==0){
-                            divisorCounter++;
-                        }
-                        if(divisorCounter>1){
-                            break;
-                        }
+//     public:
+//     int exactly3Divisors(int N)
+//     {
+//         //Your code here
+//         int numCounter=0;
+//         if (N < 4) {
+//             return 0;
+//         }
+//         else {
+//             for(int i=1; i<=N; i++){
+//                 int divisorCounter=0;
+//                 if(!isPrime(i)){
+//                     for(int j=2; j<i; j++){
+//                         if(i%j==0){
+//                             divisorCounter++;
+//                         }
+//                         if(divisorCounter>1){
+//                             break;
+//                         }
 
-                    }
-                }
-                if(divisorCounter==1){
-                    numCounter++;
-                }
-            }
+//                     }
+//                 }
+//                 if(divisorCounter==1){
+//                     numCounter++;
+//                 }
+//             }
 
-        }
+//         }
         
-        return numCounter;
+//         return numCounter;
         
-    }
-};
+//     }
+// };
 
-//{ Driver Code Starts.
+// //{ Driver Code Starts.
 
 
-int main()
- {
-    int T;
+// int main()
+//  {
+//     int T;
     
-    //taking testcases
-    cin>>T;
-    while(T--)
-    {
-        int N;
+//     //taking testcases
+//     cin>>T;
+//     while(T--)
+//     {
+//         int N;
         
-        //taking N
-        cin>>N;
-        Solution ob;
-        //calling function exactly3Divisors()
-        cout<<ob.exactly3Divisors(N)<<endl;
-    }
-	return 0;
-}
-// } Driver Code Ends
+//         //taking N
+//         cin>>N;
+//         Solution ob;
+//         //calling function exactly3Divisors()
+//         cout<<ob.exactly3Divisors(N)<<endl;
+//     }
+// 	return 0;
+// }
+// // } Driver Code Ends
 
 
 
@@ -201,28 +201,80 @@ class Solution{
         return numCounter;
         
         
-    }  
+    }
+
+
+
+    //aproach3
+    // self hypothesis2 - if the number is square of a Prime - ONLY THEN it will have exact 3 divisors.
+
+    public:
+    std::vector<int> foo(N):{
+        std::vector<int> result;
+
+        for(i=2; i*i <= N; i++){
+            primeFlag=true;
+            //now we need to check if we can divide the number "i" with any of the previous Primes
+
+            for(num:result){
+                if(i%num==0){
+                    primeFlag=false;
+                    break;
+                }
+            }
+            
+            if(primeFlag){
+                if(i*i<N);{
+                    result.push_back(i);
+                }
+                else{
+                    break;
+                }
+                
+            }
+        }
+
+        return result
+    }
+
+    public:
+    int exactly3Divisors(int N){
+        //Your code here        
+        if(N<4){
+            return 0;
+        }
+        else {
+            std::vector<int> divisors = foo(N);
+        }
+        
+        return sizeof(divisors)/sizeof(divisors[0]);
+        
+        
+    }
+
 };
 
 //{ Driver Code Starts.
 
 
+
+
+
+
+
+
+
 int main()
  {
-    int T;
-    
-    //taking testcases
-    cin>>T;
-    while(T--)
-    {
-        int N;
-        
-        //taking N
-        cin>>N;
-        Solution ob;
-        //calling function exactly3Divisors()
-        cout<<ob.exactly3Divisors(N)<<endl;
-    }
+    cin>>N;
+    Solution ob;
+    //calling function exactly3Divisors()
+    cout<<ob.exactly3Divisors(N)<<endl;
+
     return 0;
 }
 // } Driver Code Ends
+
+
+
+

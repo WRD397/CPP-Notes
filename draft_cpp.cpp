@@ -1,14 +1,20 @@
 #include <iostream>
 #include <stdio.h>
+#include <vector>
 using namespace std;
 
 void test() {
 
-float score;
-cout << "Please provide your score here: "<<endl;
-cin >> score;
-cout << "Your score as mentioned is as below." << endl << score;
-cout << endl<<"Hello World!"<<endl;
+	vector<int> res;
+	res.push_back(88345348);
+	res.push_back(7895);
+	res.push_back(576);
+	res.push_back(231);
+	res.push_back(112323);
+	res.push_back(5332);
+	res.push_back(234);
+	//cout<<res[0]<<endl;
+	cout<< sizeof(res)/sizeof(res[0]) <<endl;
 
 }
 
