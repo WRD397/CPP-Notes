@@ -2,7 +2,7 @@
 
 int main()
 {
-    char a123 = "j";
+    char a123 = 'j';
     std::cout << "Hello World" << std::endl;
     std::cout << "next line" << std::endl;
     int a, b;

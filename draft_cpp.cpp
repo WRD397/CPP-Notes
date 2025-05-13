@@ -5,16 +5,17 @@ using namespace std;
 
 void test() {
 
-	vector<int> res;
-	res.push_back(88345348);
-	res.push_back(7895);
-	res.push_back(576);
-	res.push_back(231);
-	res.push_back(112323);
-	res.push_back(5332);
-	res.push_back(234);
-	//cout<<res[0]<<endl;
-	cout<< sizeof(res)/sizeof(res[0]) <<endl;
+	// vector<int> res;
+	// res.push_back(88345348);
+	// res.push_back(7895);
+	// res.push_back(576);
+	// res.push_back(231);
+	// res.push_back(112323);
+	// res.push_back(5332);
+	// res.push_back(234);
+	// //cout<<res[0]<<endl;
+	// cout<< sizeof(res)/sizeof(res[0]) <<endl;
+	cout << "Hello World" ;
 
 }
 
